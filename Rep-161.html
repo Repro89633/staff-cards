@@ -43,7 +43,7 @@ var v=decodeURIComponent(escape(atob(b64)));
 var blob=new Blob([v],{type:"text/vcard;charset=utf-8"});
 var u=URL.createObjectURL(blob);
 var a=document.createElement("a");
-a.href=u;a.download="Rep 161.vcf";
+a.href=u;a.download="Rep-161.vcf";
 document.body.appendChild(a);a.click();
 setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(u);},2000);
 }catch(e){alert("Could not save contact: "+e.message);}
