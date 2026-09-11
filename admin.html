@@ -891,16 +891,18 @@ function renderStaffList() {
 
 function getProfileUrl(s) {
 
-const base = (companyInfo.githubBaseUrl || '').replace(/\/$/, '');
+  const base = (companyInfo.githubBaseUrl || '').replace(/\/$/, '');
 
-const fileId = (s.id || '').trim().replace(/\s+/g, '-');
+  const fileId = (s.id || '').trim().replace(/\s+/g, '-');
 
-return base
-  ? base + '/' + encodeURIComponent(fileId) + '.html'
-  : encodeURIComponent(fileId) + '.html';
-
+  return base
+    ? base + '/' + encodeURIComponent(fileId) + '.html'
+    : encodeURIComponent(fileId) + '.html';
 
 }
+
+
+
 
 function generateProfileHTML(s) {
   const c       = companyInfo;
