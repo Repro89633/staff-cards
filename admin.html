@@ -888,9 +888,14 @@ function renderStaffList() {
 }
 
 // ── PROFILE PAGE GENERATOR ─────────────────────────────────
+
 function getProfileUrl(s) {
   const base = (companyInfo.githubBaseUrl || '').replace(/\/$/, '');
-  return base ? base + '/' + encodeURIComponent(s.id) + '.html' : encodeURIComponent(s.id) + '.html';
+  const fileId = (s.id || '').trim().replace(/\s+/g, '-');
+
+  return base
+    ? base + '/' + encodeURIComponent(fileId) + '.html'
+    : encodeURIComponent(fileId) + '.html';
 }
 
 function generateProfileHTML(s) {
