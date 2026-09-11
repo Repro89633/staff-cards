@@ -890,12 +890,16 @@ function renderStaffList() {
 // ── PROFILE PAGE GENERATOR ─────────────────────────────────
 
 function getProfileUrl(s) {
-  const base = (companyInfo.githubBaseUrl || '').replace(/\/$/, '');
-  const fileId = (s.id || '').trim().replace(/\s+/g, '-');
 
-  return base
-    ? base + '/' + encodeURIComponent(fileId) + '.html'
-    : encodeURIComponent(fileId) + '.html';
+const base = (companyInfo.githubBaseUrl || '').replace(/\/$/, '');
+
+const fileId = (s.id || '').trim().replace(/\s+/g, '-');
+
+return base
+  ? base + '/' + encodeURIComponent(fileId) + '.html'
+  : encodeURIComponent(fileId) + '.html';
+
+
 }
 
 function generateProfileHTML(s) {
